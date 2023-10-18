@@ -1,0 +1,7 @@
+export const APP_COLORS = {
+  WHITE: "#FFFFFF",
+  GOOGLE: "#DB4437",
+  PRIMARY_COLOR: "#6750A4",
+  SECONDARY_COLOR: "#ede7f6",
+  DISABLED_COLOR: "#CAC4D0"
+};
