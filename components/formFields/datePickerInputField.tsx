@@ -15,6 +15,7 @@ interface DatePickerInputFieldComponentProps {
   label: string;
   defaultValue: any;
   dateInputFieldProps?: DatePickerProps<Date>;
+  size?: "small" | "medium";
 }
 
 const DatePickerInputFieldComponent = ({
@@ -23,6 +24,7 @@ const DatePickerInputFieldComponent = ({
   rules,
   label,
   defaultValue,
+  size
 }: DatePickerInputFieldComponentProps) => {
   return (
     <FormControl sx={{ width: "100%" }}>
@@ -48,6 +50,7 @@ const DatePickerInputFieldComponent = ({
                       required: true,
                       onBlur,
                       name,
+                      size: size,
                       error: !!fieldState?.error,
                       helperText: fieldState?.error?.message,
                     },

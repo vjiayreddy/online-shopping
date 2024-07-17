@@ -1,12 +1,10 @@
-'use client';
+"use client";
 import React from "react";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import ProductMenuComponent from "./productMenu";
+import { useRouter } from "next/navigation";
 
 const pages = ["Products", "Pricing", "Blog"];
 
@@ -16,15 +14,16 @@ const StyledTabsList = styled(Tabs)(({ theme }) => ({
     display: "none",
   },
 }));
-const StyledTab = styled(Tab)<{ ref?: React.Ref<HTMLDivElement> }>(() => ({
+const StyledTab = styled(Tab)<{ ref?: React.Ref<HTMLDivElement> }>(({theme}) => ({
   minHeight: 62,
   fontWeight: 500,
-  fontSize: 16,
+  color:theme.palette.common.black
 }));
 
 const NavigationMenuComponent = () => {
   const [tabIndex, setTabIndex] = React.useState<string | boolean>(false);
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
   //   const appBarZindexValue = useReactiveVar(appBarZindexVar);
   const anchorRef = React.useRef<HTMLDivElement>(null);
   const handleToggle = () => {
@@ -50,24 +49,27 @@ const NavigationMenuComponent = () => {
     setOpen(false);
   };
 
+  const handleNavigation = (routeName: string) => {
+    router.push(routeName);
+  }
+
   return (
     <>
       <StyledTabsList
         value={tabIndex}
         onChange={(_, value) => setTabIndex(value)}
       >
-        <StyledTab value="0" label="Home" />
         <StyledTab
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
           aria-controls={open ? "products-menu" : undefined}
           ref={anchorRef}
           value="1"
-          label="Products"
+          label="Wedding"
           onClick={handleToggle}
         />
-        <StyledTab value="2" label="Abous Us" />
-        <StyledTab value="3" label="Contact Us" />
+        <StyledTab value="2" label="Daily Wear" onClick={()=>handleNavigation('/dashboard')} />
+        <StyledTab value="3" label="Accessories" />
       </StyledTabsList>
 
       <ProductMenuComponent

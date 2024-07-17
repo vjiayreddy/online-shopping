@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -17,19 +17,19 @@ const StyledUserActionBox = styled(Box)(({ theme }) => ({
 }));
 
 const StyledNavigationBox = styled(Box)(({ theme }) => ({
-  display:"flex",
-  alignItems:'center',
-  justifyContent:"center",
-  flexGrow:1
-}))
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexGrow: 1,
+}));
 
 const MainHeaderComponent = () => {
   return (
     <AppBar position="sticky">
-      <Container maxWidth="lg" disableGutters>
+      <Container  maxWidth="xl" disableGutters>
         <Toolbar>
           <StyledLogoBox>
-            <Typography variant="h4">Ahats Traders</Typography>
+            <Typography variant="h6">LOGO</Typography>
           </StyledLogoBox>
           <StyledNavigationBox>
             <NavigationMenuComponent />

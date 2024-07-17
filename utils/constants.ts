@@ -1,7 +1,11 @@
 import IconEnum from "@/components/icon/iconEnum";
+import { APP_ROUTES } from "./routes";
 export const APP_BAR_SIZE = 65;
+export const TOP_INFO_BAR = 32;
 export const BRAND_NAME = "True Feel";
 export const drawerWidth = 220;
+export const SAMPLE_USER_ID = "5f8c1f5f2927681218811212";
+
 export const adminMenuItems = [
   {
     title: "Protocol",
@@ -1972,5 +1976,171 @@ export const PRODUCT_MENU = [
         name: "Pilot Type 64 Spray Gun",
       },
     ],
+  },
+];
+
+export const HOME_CATEGORIES = [
+  {
+    id: 1,
+    category: "Sherwani",
+    imageUrl: "/assets/images/categories/sharwani.png",
+  },
+  {
+    id: 2,
+    category: "Suits",
+    imageUrl: "/assets/images/categories/suit.svg",
+  },
+  {
+    id: 3,
+    category: "T-Shirts",
+    imageUrl: "/assets/images/categories/tshirt.svg",
+  },
+  {
+    id: 4,
+    category: "Indo Westren",
+    imageUrl: "/assets/images/categories/indo-westren.png",
+  },
+  {
+    id: 5,
+    category: "Jodhpuri",
+    imageUrl: "/assets/images/categories/jodhpuri.png",
+  },
+  {
+    id: 6,
+    category: "Shirts",
+    imageUrl: "/assets/images/categories/shirt.png",
+  },
+  {
+    id: 7,
+    category: "Trouser",
+    imageUrl: "/assets/images/categories/trouser.png",
+  },
+  {
+    id: 7,
+    category: "Sadri",
+    imageUrl: "/assets/images/categories/sadri.png",
+  },
+];
+
+export const HOME_BANNER = [
+  {
+    id: 1,
+    title: "Suits",
+    imageUrl:
+      "https://images.pexels.com/photos/3734847/pexels-photo-3734847.jpeg?auto=compress&cs=tinysrgb&w=600",
+  },
+  {
+    id: 2,
+    title: "Sherwani",
+    imageUrl:
+      "https://images.indianweddingsaree.com/tr:w-395,q-80/images/1780936.jpg",
+  },
+  {
+    id: 3,
+    title: "Jodhpuri",
+    imageUrl:
+      "https://i.pinimg.com/564x/eb/c1/17/ebc1175e5998604597c99f89de13e9e2.jpg",
+  },
+  {
+    id: 4,
+    title: "Indo Westren",
+    imageUrl:
+      "https://i.pinimg.com/564x/e1/dd/ba/e1ddba42547f6f211a01184d88e5869e.jpg",
+  },
+  {
+    id: 5,
+    title: "Kurta",
+    imageUrl:
+      "https://i.pinimg.com/564x/0c/c0/21/0cc021d402ad6f25408b7659d594e7e8.jpg",
+  },
+  {
+    id: 6,
+    title: "Sadri",
+    imageUrl:
+      "https://i.pinimg.com/564x/9b/cf/e2/9bcfe27b94f86881fb39f25752f48d65.jpg",
+  },
+];
+
+export const HOME_OCCASIONS = [
+  {
+    id: 1,
+    title: "Wedding",
+    imageUrl: "/assets/images/occasions/wedding.png",
+    bgColor: "#f4d7bf",
+  },
+  {
+    id: 2,
+    title: "Haldi",
+    imageUrl: "/assets/images/occasions/haldi.png",
+    bgColor: "#fcf9d8",
+  },
+  {
+    id: 3,
+    title: "Sangeet",
+    imageUrl: "/assets/images/occasions/sangeet.png",
+    bgColor: "#ece1e1",
+  },
+  {
+    id: 4,
+    title: "Formal Wear",
+    imageUrl: "/assets/images/occasions/formal_dress.png",
+    bgColor: "#e5e5e5",
+  },
+  {
+    id: 5,
+    title: "Semi Formal Wear",
+    imageUrl: "/assets/images/occasions/semi_formal_dress.png",
+    bgColor: "#d7d7d8",
+  },
+  {
+    id: 6,
+    title: "Party Wear",
+    imageUrl: "/assets/images/occasions/party_wear.png",
+    bgColor: "#c2c7bd",
+  },
+  {
+    id: 7,
+    title: "Mehndi",
+    imageUrl: "/assets/images/occasions/mehndhi_wear.png",
+    bgColor: "#ede0c8",
+  },
+  {
+    id: 8,
+    title: "Casual Wear",
+    imageUrl: "/assets/images/occasions/casual_wear.png",
+    bgColor: "#e7e9f1",
+  },
+];
+
+export const USER_MENU_LIST = [
+  {
+    name: "Basic Info",
+    url: APP_ROUTES.USER,
+  },
+  {
+    name: "Addresses",
+    url: APP_ROUTES.USER_ADDRESSES,
+  },
+
+  {
+    name: "Orders",
+    url: APP_ROUTES.USER_ORDERS,
+  },
+  {
+    name: "Wishlist",
+    url: APP_ROUTES.USER_WISHLIST,
+  },
+
+  {
+    name: "Appointments",
+    url: APP_ROUTES.USER_APPOINTMENTS,
+  },
+  {
+    name: "Measurments",
+    url: APP_ROUTES.USER_MEASURMENTS,
+  },
+  {
+    name: "Account",
+    url: APP_ROUTES.USER_ACCOUNT,
   },
 ];

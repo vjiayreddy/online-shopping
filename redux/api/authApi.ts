@@ -25,7 +25,7 @@ export const updateSession = (session: Session, token: JWT) => {
 export const updateToken = (token: JWT, user: User) => {
   if (token) {
     token.id = user.id;
-    token.name = user?.firstName + " " + user?.lastName;
+    token.name = user?.name;
     token.email = user?.email;
     token.mobileNumber = user?.mobileNumber;
     token.firstName = user?.firstName;

@@ -15,7 +15,7 @@ export default function ThemeRegistry({
 }) {
   const { theme } = useTheme();
   return (
-    <NextAppDirEmotionCacheProvider options={{ key: "mui" }}>
+    <NextAppDirEmotionCacheProvider options={{ key: "mui"}}>
       {theme && (
         // <ThemeProvider theme={theme === "light" ? lightTheme : lightTheme}>
         <ThemeProvider theme={lightTheme}>

@@ -1,3 +1,6 @@
+import { ERROR_TYPE } from "@/typescript/enums";
+import { API_ERROR } from "@/typescript/types";
+
 export const shouldForwardProp = <CustomProps extends Record<string, any>>(
   props: Array<keyof CustomProps>,
   prop: PropertyKey
@@ -21,4 +24,13 @@ export const stringReplaceWithWhiteSpace = (
 ) => {
   const newValue = value.toLowerCase().replace(/\s/g, replaceWith);
   return newValue;
+};
+
+export const getErrorStatusMessage = (query: string, errorType: ERROR_TYPE) => {
+  const error: API_ERROR = {
+    type: errorType,
+    query: query,
+    message: ``,
+  };
+  return error;
 };

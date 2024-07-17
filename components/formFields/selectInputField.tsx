@@ -10,7 +10,7 @@ import {
   SelectProps,
 } from "@mui/material";
 
-interface SelectInputFieldComponentProps {
+interface FormSelectInputFieldProps {
   id: string;
   name: string;
   control: Control<FieldValues, object> | any;
@@ -18,11 +18,13 @@ interface SelectInputFieldComponentProps {
   label: string;
   defaultValue: string;
   options: any[];
+  displayLabel: string;
+  targetLabel: string;
   selectFilesProps?: SelectProps;
   size?: "small" | "medium";
 }
 
-const SelectInputFieldComponent = ({
+const FormSelectInputField = ({
   id,
   size = "small",
   name,
@@ -30,9 +32,11 @@ const SelectInputFieldComponent = ({
   control,
   rules,
   label,
+  targetLabel,
+  displayLabel,
   defaultValue,
   selectFilesProps,
-}: SelectInputFieldComponentProps) => {
+}: FormSelectInputFieldProps) => {
   return (
     <Controller
       name={name}
@@ -52,8 +56,8 @@ const SelectInputFieldComponent = ({
               {...selectFilesProps}
             >
               {options.map((option, index) => (
-                <MenuItem key={index} value={option.value}>
-                  {option.label}
+                <MenuItem key={index} value={option[targetLabel]}>
+                  {option[displayLabel]}
                 </MenuItem>
               ))}
             </Select>
@@ -67,4 +71,4 @@ const SelectInputFieldComponent = ({
   );
 };
 
-export default SelectInputFieldComponent;
+export default FormSelectInputField;

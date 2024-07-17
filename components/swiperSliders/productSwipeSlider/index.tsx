@@ -19,7 +19,7 @@ const ProductSwiperSliderComponent = ({
       loop={true}
       navigation={true}
       spaceBetween={20}
-      slidesPerView={4}
+      slidesPerView={3}
       modules={[Autoplay, Navigation]}
       className="product-swiper_slider"
     >

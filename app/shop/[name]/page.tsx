@@ -1,13 +1,21 @@
-import React from "react";
-import MainLayoutContainer from "@/containers/layouts/mainLayout";
-import ShopContainer from "@/containers/pages/shop";
+"use client";
 
-const ProductDetailsPage = () => {
-  return (
-    <MainLayoutContainer>
-      <ShopContainer />
-    </MainLayoutContainer>
-  );
+import React from "react";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+type Props = {
+  params: {
+    name: string;
+  };
 };
 
-export default ProductDetailsPage;
+const ProductDetails = ({ params }: Props) => {
+  if (params?.name === "notFound") {
+    notFound();
+  }
+
+  return <div>Shop - {params.name}</div>;
+};
+
+export default ProductDetails;

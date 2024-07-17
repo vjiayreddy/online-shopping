@@ -161,6 +161,8 @@ const QuestionFormContainer = ({
           <SelectInputFieldComponent
             options={isLoading ? [] : (questionTypesData?.data as any[])}
             control={control}
+            displayLabel=""
+            targetLabel=""
             id="question-type-input"
             label="Input Type"
             name="questionOptionTypeId"

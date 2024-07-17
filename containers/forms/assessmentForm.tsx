@@ -202,6 +202,8 @@ const AssessmentFormContainer = ({
             <SelectInputFieldComponent
               options={ASSESSMENT_TYPES}
               control={control}
+              displayLabel=""
+              targetLabel=""
               id="Assessment-type-input"
               label="Type"
               name="surveyType"

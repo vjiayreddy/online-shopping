@@ -30,6 +30,7 @@
     "***/*.tsx",
     "****/*.tsx",
     "***/*.ts",
+    "*****/*.ts",
     ".next/types/**/*.ts",
     "redux/provider.js",
     "app/participants/[create]"

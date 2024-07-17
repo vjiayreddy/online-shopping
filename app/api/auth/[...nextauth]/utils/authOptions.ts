@@ -21,21 +21,25 @@ const authOptions: AuthOptions = {
           email: credentials?.email,
           password: credentials.password,
         });
+
+        console.log("response", response);
+
         if (response?.status === "failure" && !response?.data) {
           throw new Error(response?.message);
         }
         return {
-          id: response?.data?.doctor?._id,
-          name:
-            response?.data?.doctor?.firstName +
-            " " +
-            response?.data?.doctor?.lastName,
-          firstName: response?.data?.doctor?.firstName,
-          lastName: response?.data?.doctor?.lastName,
-          email: response?.data?.doctor?.email,
-          mobileNumber: response?.data?.doctor?.mobileNumber,
-          isEmailVerified: response?.data?.doctor?.isEmailVerified,
-          gender: response?.data?.gender,
+          id: "",
+          // id: response?.data?.doctor?._id,
+          // name:
+          //   response?.data?.doctor?.firstName +
+          //   " " +
+          //   response?.data?.doctor?.lastName,
+          // firstName: response?.data?.doctor?.firstName,
+          // lastName: response?.data?.doctor?.lastName,
+          // email: response?.data?.doctor?.email,
+          // mobileNumber: response?.data?.doctor?.mobileNumber,
+          // isEmailVerified: response?.data?.doctor?.isEmailVerified,
+          // gender: response?.data?.gender,
         };
       },
     }),
@@ -43,12 +47,14 @@ const authOptions: AuthOptions = {
   secret: process.env.NEXT_PUBLIC_AUTH_SECRET,
   callbacks: {
     jwt: async ({ token, user }) => {
+      console.log("jwt", token, user);
       if (user) {
-        token = updateToken(token,user)
+        token = updateToken(token, user);
       }
       return token;
     },
     session: async ({ session, token }) => {
+      console.log("session", token, session);
       if (token) {
         session = updateSession(session, token);
       }

@@ -9,6 +9,7 @@ interface FormMobileInputProps extends MuiTelInputProps {
   country?: string;
   label?: string;
   defaultValue: string;
+  size?:"small"|"medium"
 }
 
 const FormMobileInput: React.FC<FormMobileInputProps> = ({
@@ -17,6 +18,7 @@ const FormMobileInput: React.FC<FormMobileInputProps> = ({
   rules,
   error,
   label,
+  size,
   defaultValue,
   ...props
 }) => {
@@ -41,6 +43,7 @@ const FormMobileInput: React.FC<FormMobileInputProps> = ({
             focusOnSelectCountry
             InputProps={{
               fullWidth: true,
+              size:size 
             }}
             classes={{}}
             value={value}

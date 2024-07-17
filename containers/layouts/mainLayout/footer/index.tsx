@@ -76,9 +76,9 @@ const FooterComponent = () => {
               className="logo__title"
               color=""
               textAlign="center"
-              variant="h3"
+              variant="h4"
             >
-              Ahats Traders
+              LOGO
             </Typography>
             <Typography
               className="address"

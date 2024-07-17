@@ -1,26 +1,35 @@
 import ThemeRegistry from "@/theme/themeRegistry";
-import "./globals.scss";
 import NextAuthSessionProvider from "./api/auth/[...nextauth]/providers/sessionProvider";
 import NextThemeProvider from "@/theme/nextThemeProvider";
 import { ReduxStateProviders } from "@/redux/provider";
-import MainContainerComponent from "@/components/utils/mainComponent";
+import MainLayout from "@/components/layouts/main-layout/MainLayout";
+import "swiper/css";
+import "./globals.scss";
+import ApolloClientProvider from "@/apollo/provider";
 
 export default function RootLayout({
   children,
+  model,
 }: {
   children: React.ReactNode;
+  model: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <ReduxStateProviders>
-          <NextAuthSessionProvider>
-            <NextThemeProvider>
-              <ThemeRegistry>
-                <MainContainerComponent>{children}</MainContainerComponent>
-              </ThemeRegistry>
-            </NextThemeProvider>
-          </NextAuthSessionProvider>
+          <ApolloClientProvider>
+            <NextAuthSessionProvider>
+              <NextThemeProvider>
+                <ThemeRegistry>
+                  <MainLayout>
+                    {children}
+                    {model}
+                  </MainLayout>
+                </ThemeRegistry>
+              </NextThemeProvider>
+            </NextAuthSessionProvider>
+          </ApolloClientProvider>
         </ReduxStateProviders>
       </body>
     </html>

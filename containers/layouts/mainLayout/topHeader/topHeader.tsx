@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -6,21 +6,23 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import ReactFlagsSelect from "react-flags-select";
 import { CURRENCIES } from "@/utils/constants";
+import { Typography } from "@mui/material";
 
 const StyledTopHeaderComponent = styled(Box)(({ theme }) => ({
   borderBottom: `1px solid ${theme.palette.divider}`,
   padding: 5,
+  backgroundColor:theme.palette.common.black,
+  color:theme.palette.common.white
 }));
 
 const TopHeaderComponent = () => {
   const [selected, setSelected] = useState("IN");
-  console.log(selected);
   return (
     <StyledTopHeaderComponent>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container alignItems="center">
           <Grid item xs>
-            Call Us : +9390442674
+            <Typography variant="caption">Call Us : +9390442674</Typography>
           </Grid>
           <Grid item>
             <ReactFlagsSelect
