@@ -4,17 +4,6 @@ import authOptions from "./app/api/auth/[...nextauth]/utils/authOptions";
 import { getSession } from "next-auth/react";
 
 export async function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone();
-  const hostname = request.headers.get("host");
-  const requestForNextAuth = {
-    headers: {
-      cookie: request.headers.get("cookie") ?? undefined,
-    },
-  };
-  const session = await getSession({ req: requestForNextAuth });
-
-  //   const session = await getServerSession(authOptions);
-  console.log(session);
   return NextResponse.next();
 }
 

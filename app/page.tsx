@@ -1,5 +1,5 @@
 "use client";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Container } from "@mui/material";
 import HomeSwiperSliderComponent from "@/components/swiperSliders/homeSwiperSlider";
 import HomeProductsContainer from "@/containers/pages/home/categories";
@@ -18,7 +18,24 @@ import HomeMostLoved from "@/containers/pages/home/most-loved/MostLoved";
 import HomeEvents from "@/containers/pages/home/events/Events";
 import HappyClients from "@/containers/pages/home/happy-clients/HappyClients";
 
+const cdn = "https://cdn.lightwidget.com/widgets/lightwidget.js";
+const lightWidget =
+  "https://lightwidget.com/widgets/2c5e957b1e0d56cdb7ed1cf9ef0d3092.html";
+
 const HomePage = () => {
+  useEffect(() => {
+    // Load the Lightwidget script after component mounts
+    const script = document.createElement("script");
+    script.src = cdn;
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up the script when component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <Fragment>
       <Container disableGutters maxWidth="xl">
@@ -60,7 +77,7 @@ const HomePage = () => {
         <HomeMostLoved />
       </SectionContainer>
       <SectionContainer maxWidth="sm" disableGutters>
-       <HappyClients/>
+        <HappyClients />
       </SectionContainer>
       <SectionContainer maxWidth="xl" disableGutters>
         <HomeMediaPress />
@@ -68,6 +85,19 @@ const HomePage = () => {
       <SectionContainer maxWidth="md">
         <HomeFaq />
       </SectionContainer>
+      <iframe
+        title="Instagram Feed"
+        src={lightWidget}
+        scrolling="no"
+        allowTransparency={true}
+        className="lightwidget-widget"
+        style={{
+          width: "100%",
+          border: "0",
+          overflow: "hidden",
+          height: "600px",
+        }}
+      ></iframe>
     </Fragment>
   );
 };
